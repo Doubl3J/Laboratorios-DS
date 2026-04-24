@@ -1,10 +1,10 @@
 public class ImperialAdapter implements Calculadora{
-    private DispositivoImperial d;
-    private CalculadoraInternacional ci;
+    private DispositivoImperial dispositivo;
+    private CalculadoraInternacional calculadoraI;
 
     public ImperialAdapter(DispositivoImperial d){
-        this.d = d;
-        this.ci = new CalculadoraInternacional(null);
+        this.dispositivo = d;
+        this.calculadoraI = new CalculadoraInternacional(null);
 
     }
 
@@ -12,12 +12,12 @@ public class ImperialAdapter implements Calculadora{
     public String IMCcalculate(){
 
 
-        double alturaP = d.getAlturaP();
-        double pesoLb = d.getPesoLb();
+        double alturaP = dispositivo.getAlturaP();
+        double pesoLb = dispositivo.getPesoLb();
 
         double alturaM = alturaP * 0.3048;
         double pesoKg = pesoLb * 0.4536;
 
-        return ci.RangoSalud(alturaM,pesoKg);
+        return calculadoraI.RangoSalud(alturaM,pesoKg);
     }
 }
